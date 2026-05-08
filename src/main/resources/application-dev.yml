@@ -1,0 +1,49 @@
+# ================================================================
+#  Profil DEV — base de données locale, logs détaillés
+# ================================================================
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/freelance_dev
+    username: postgres
+    password: postgres
+    hikari:
+      pool-name: HikariDev
+      maximum-pool-size: 5
+      minimum-idle: 2
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000ms
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: localhost
+    port: 1025          # MailHog / MailPit en local
+    username: ""
+    password: ""
+    properties:
+      mail.smtp.auth: false
+      mail.smtp.starttls.enable: false
+
+logging:
+  level:
+    root: INFO
+    com.freelance: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
+
+# Swagger activé en dev
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true

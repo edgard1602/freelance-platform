@@ -1,0 +1,26 @@
+# ================================================================
+#  Profil DOCKER — noms de services docker-compose
+# ================================================================
+
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/freelance
+    username: ${POSTGRES_USER:freelance}
+    password: ${POSTGRES_PASSWORD:freelance}
+    hikari:
+      pool-name: HikariDocker
+      maximum-pool-size: 10
+
+  data:
+    redis:
+      host: redis
+      port: 6379
+
+  mail:
+    host: mailpit
+    port: 1025
+
+logging:
+  level:
+    root: INFO
+    com.freelance: DEBUG
