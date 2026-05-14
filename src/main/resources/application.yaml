@@ -14,8 +14,6 @@ spring:
   # ── Jackson (Jackson 3, défaut Spring Boot 4) ──────────────────
   jackson:
     default-property-inclusion: non_null
-    serialization:
-      write-dates-as-timestamps: false
     deserialization:
       fail-on-unknown-properties: false
     time-zone: UTC
